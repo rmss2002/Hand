@@ -1,0 +1,156 @@
+# Simulation settings for using moveit_sim_controllers
+moveit_sim_hw_interface:
+  joint_model_group: thumb
+  joint_model_group_pose: victory
+# Settings for ros_control_boilerplate control loop
+generic_hw_control_loop:
+  loop_hz: 300
+  cycle_time_error_threshold: 0.01
+# Settings for ros_control hardware interface
+hardware_interface:
+  joints:
+    - t_mcp_pitch
+    - t_mcp_yaw
+    - t_pip_pitch
+    - m_mcp_yaw
+    - m_mcp_pitch
+    - m_pip_pitch
+    - m_dip_pitch
+    - r_mcp_yaw
+    - r_mcp_pitch
+    - r_pip_pitch
+    - r_dip_pitch
+    - s_mcp_yaw
+    - s_mcp_pitch
+    - s_pip_pitch
+    - s_dip_pitch
+    - i_mcp_yaw
+    - i_mcp_pitch
+    - i_pip_pitch
+    - i_dip_pitch
+  sim_control_mode: 1  # 0: position, 1: velocity
+# Publish all joint states
+# Creates the /joint_states topic necessary in ROS
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
+controller_list:
+  []
+jointtrajectorycontroller:
+  type: effort_controllers/JointTrajectoryController
+  joints:
+    - t_mcp_pitch
+    - t_mcp_yaw
+    - t_pip_pitch
+    - i_mcp_yaw
+    - i_mcp_pitch
+    - i_pip_pitch
+    - i_dip_pitch
+    - m_mcp_yaw
+    - m_mcp_pitch
+    - m_pip_pitch
+    - m_dip_pitch
+    - r_mcp_yaw
+    - r_mcp_pitch
+    - r_pip_pitch
+    - r_dip_pitch
+    - s_mcp_yaw
+    - s_mcp_pitch
+    - s_pip_pitch
+    - s_dip_pitch
+  gains:
+    t_mcp_pitch:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    t_mcp_yaw:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    t_pip_pitch:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    i_mcp_yaw:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    i_mcp_pitch:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    i_pip_pitch:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    i_dip_pitch:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    m_mcp_yaw:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    m_mcp_pitch:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    m_pip_pitch:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    m_dip_pitch:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    r_mcp_yaw:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    r_mcp_pitch:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    r_pip_pitch:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    r_dip_pitch:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    s_mcp_yaw:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    s_mcp_pitch:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    s_pip_pitch:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    s_dip_pitch:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
